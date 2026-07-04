@@ -33,9 +33,9 @@ export default function HumanTrust() {
           </Reveal>
           <Reveal delay={0.14}>
             <p className={styles.support}>
-              Founded by the Remmert family in {proof[0].value}, REM has grown from a
-              neighborhood print shop into a full-service production partner for businesses,
-              campaigns, schools, and organizations across the Capital Region.
+              The Remmert family has been in the printing industry since {proof[0].value}.
+              REM now works from Albany across digital print, bindery, mail, apparel,
+              sublimation, promotional products, and political materials.
             </p>
           </Reveal>
           <Reveal delay={0.1}>

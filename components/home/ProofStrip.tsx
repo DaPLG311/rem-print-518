@@ -9,7 +9,7 @@ import styles from './ProofStrip.module.css';
  * All values render from lib/config proof.
  */
 export default function ProofStrip() {
-  const ticketLine = `JOB NO. 001 / ${business.city.toUpperCase()}, ${business.region} / RUN CONTINUOUS SINCE ${proof[0].value}`;
+  const ticketLine = `JOB NO. 001 / ${business.city.toUpperCase()}, ${business.region} / FAMILY PRINTING ROOTS SINCE ${proof[0].value}`;
 
   return (
     <section

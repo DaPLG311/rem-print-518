@@ -68,6 +68,50 @@
   margin-top: 2.5rem;
 }
 
+.factGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 40rem;
+  margin-top: 1.5rem;
+}
+
+.factCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 6rem;
+  padding: 1rem;
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-control);
+  background-color: var(--soft-white);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.factCard:hover {
+  border-color: var(--rem-red);
+  transform: translateY(-2px);
+}
+
+.factLabel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rem-red);
+}
+
+.factValue {
+  margin-top: 0.75rem;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  line-height: 1.15;
+  color: var(--warm-black);
+  overflow-wrap: anywhere;
+}
+
 .heroMedia {
   display: grid;
   gap: clamp(1.25rem, 2.5vw, 2rem);
@@ -286,6 +330,10 @@
 
   .pillarLine {
     grid-column: 2;
+  }
+
+  .factGrid {
+    grid-template-columns: 1fr;
   }
 }
 

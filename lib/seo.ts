@@ -48,8 +48,10 @@ export function localBusinessJsonLd(): Record<string, unknown> {
     slogan: business.tagline,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: business.streetAddress,
       addressLocality: business.city,
       addressRegion: business.region,
+      postalCode: business.postalCode,
       addressCountry: 'US',
     },
     areaServed: business.serviceArea,

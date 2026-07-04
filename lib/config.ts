@@ -1,28 +1,32 @@
 /**
  * Central business config — the ONLY place business facts live.
  * Pages and components consume this; nothing is inlined elsewhere.
- * Placeholder values are flagged in docs/VERIFY-BEFORE-LAUNCH.md.
+ * Source-backed public facts are from REM's official site and Capital Region
+ * Chamber listing. Launch-only secrets still live in env vars.
  */
 
 export const business = {
   name: 'REM Digital Print & Mail Center',
   shortName: 'REM',
   tagline: 'BRING REM THE JOB. THEY KNOW HOW TO GET IT DONE.',
-  phone: '+15180000000',
-  phoneDisplay: '(518) 000-0000',
-  addressLine: 'Albany, NY (address pending)',
+  phone: '+15184387338',
+  phoneDisplay: '(518) 438-7338',
+  addressLine: '10 Railroad Ave, Albany, NY 12205',
+  streetAddress: '10 Railroad Ave',
   city: 'Albany',
   region: 'NY',
+  postalCode: '12205',
   serviceArea: 'Albany · Capital Region · 518',
-  email: 'quotes@example.com',
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://rem-print-mail.vercel.app',
+  email: 'orders@remdigitalprint.com',
+  officialSite: 'https://www.remdigitalprint.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://rem-print-518.vercel.app',
 } as const;
 
 export const proof = [
-  { value: '1985', label: 'Established' },
+  { value: '1993', label: 'Family Printing Roots' },
   { value: '99%', label: 'In-House Production' },
   { value: '3–5', label: 'Day Digital Turnaround' },
-  { value: '24HR', label: 'Rush Options Available' },
+  { value: 'Next Day', label: 'Printing Available' },
 ] as const;
 
 export interface ServiceLane {

@@ -5,12 +5,16 @@ The staging build presents these as the brief approved them, but launch is block
 
 ## FACTUAL CLAIMS ON THE SITE (staging)
 
-- [ ] Founded 1985 by the Remmert family
-- [ ] 99% of jobs completed in-house
-- [ ] Most digital jobs completed in 3–5 business days
-- [ ] Next-day / 24HR rush printing availability + exact rush policy language
+- [x] Public contact basics added from REM's official site: 518-438-7338,
+      orders@remdigitalprint.com, 10 Railroad Ave, Albany NY 12205
+- [x] Remmert family printing roots since 1993, from Capital Region Chamber profile
+- [x] 99% of jobs completed in-house, from REM services page
+- [x] Most digital jobs completed in 3–5 business days, from REM services page
+- [x] Next-day printing availability, from REM services page
+- [ ] Exact rush policy language beyond next-day printing availability
 - [ ] Union shop positioning (NOT used on site — confirm whether to add)
-- [ ] Mugs & sublimation: no minimums, no setup fees, no fading, no flaking
+- [x] Mugs & sublimation: no minimums, no setup fees, no fading, no flaking,
+      from REM services page
 - [ ] Responds to quote requests "usually within one business day" (thank-you page,
       thank-you metadata, /upload confirmation)
 - [ ] Origin story: started as a neighborhood/traditional print shop, grew into digital
@@ -28,9 +32,11 @@ The staging build presents these as the brief approved them, but launch is block
 
 ## PLACEHOLDERS THAT MUST BE REPLACED (all in `lib/config.ts`)
 
-- [ ] Real phone number (currently placeholder — tap-to-call is wired to config)
-- [ ] Real street address + hours
-- [ ] Real email / quote-inbox destination (`QUOTE_WEBHOOK_URL` env)
+- [x] Real phone number
+- [x] Real street address
+- [ ] Real hours
+- [x] Real public email
+- [ ] Real quote-inbox destination (`QUOTE_WEBHOOK_URL` env)
 - [ ] Official REM logo files (site currently uses typographic REM wordmark)
 - [ ] Brand accent confirmation: #C8102E sampled from approved Canva frames — confirm
       against REM's actual logo/identity

@@ -9,31 +9,54 @@ import { pageMetadata, localBusinessJsonLd, JsonLd } from '@/lib/seo';
 import styles from './page.module.css';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'About REM — Founded Here. Built Over Decades.',
-  description: `Founded by the Remmert family in ${proof[0].value}, REM has grown from a neighborhood print shop into a full-service production partner for businesses, campaigns, schools, and organizations across the Capital Region.`,
+  title: 'About REM — Local Albany Print, Mail, Apparel & Promo.',
+  description: `The Remmert family has been in printing since ${proof[0].value}. REM serves Albany from ${business.addressLine} with print, bindery, mail, apparel, sublimation, and promotional product work.`,
   path: '/about',
 });
 
 const pillars = [
   {
-    label: `Established ${proof[0].value}`,
-    line: 'Decades of Capital Region production.',
+    label: `Printing roots ${proof[0].value}`,
+    line: 'The Remmert family has been in the printing industry for decades.',
   },
   {
     label: 'Speed',
-    line: 'Deadlines are a reason to call, not a problem.',
+    line: 'Most digital print jobs are positioned around a 3-5 business day window.',
   },
   {
     label: 'Capability',
-    line: 'Print, apparel, mail, promo, political — one roof.',
+    line: 'Digital printing, bindery, mailing, wearables, sublimation, and promo.',
   },
   {
     label: 'In-House Control',
-    line: `${proof[1].value} of production stays in the building.`,
+    line: `${proof[1].value} of jobs can be completed in-house, according to REM's services page.`,
   },
   {
     label: 'Human Service',
-    line: 'Real people behind the machines.',
+    line: 'A local printer with a staff that knows its customers.',
+  },
+];
+
+const localFacts = [
+  {
+    label: 'Call',
+    value: business.phoneDisplay,
+    href: `tel:${business.phone}`,
+  },
+  {
+    label: 'Email',
+    value: business.email,
+    href: `mailto:${business.email}`,
+  },
+  {
+    label: 'Visit',
+    value: business.officialSite.replace('https://www.', ''),
+    href: business.officialSite,
+  },
+  {
+    label: 'Find REM',
+    value: business.addressLine,
+    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(business.addressLine)}`,
   },
 ];
 
@@ -64,24 +87,32 @@ export default function AboutPage() {
               <span className={styles.period}>.</span>
             </h1>
             <p className={styles.lede}>
-              Founded by the Remmert family in {proof[0].value}, REM has grown from a
-              neighborhood print shop into a full-service production partner for businesses,
-              campaigns, schools, and organizations across the Capital Region.
+              The Remmert family has been in the printing industry since {proof[0].value}.
+              Today REM is a local Albany production shop for digital print, bindery,
+              mailing, wearables, sublimation, promotional products, and political work.
             </p>
             <p className={`ticket-line ${styles.ticket}`}>
-              Est. {proof[0].value} · {business.city}, {business.region} · Run continuous
+              {proof[0].value} roots · {business.addressLine} · {business.phoneDisplay}
             </p>
+            <div className={styles.factGrid} aria-label="REM contact facts">
+              {localFacts.map((fact) => (
+                <a key={fact.label} href={fact.href} className={styles.factCard}>
+                  <span className={styles.factLabel}>{fact.label}</span>
+                  <span className={styles.factValue}>{fact.value}</span>
+                </a>
+              ))}
+            </div>
           </div>
           <div className={styles.heroMedia}>
             <Reveal>
               <MediaMask
-                label="FACILITY — PRESS FLOOR (REAL PHOTO PENDING)"
+                label="Digital print + bindery floor"
                 ratio="4 / 3"
               />
             </Reveal>
             <Reveal delay={0.12} className={styles.heroMediaOffset}>
               <MediaMask
-                label="THE WORK IN HAND (REAL PHOTO PENDING)"
+                label="Mail, apparel, promo"
                 ratio="1 / 1"
               />
             </Reveal>
@@ -104,9 +135,10 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className={styles.growthSupport}>
-              What started as traditional printing grew, decade by decade, into modern
-              digital production — printing, finishing, apparel, sublimation, mail, promo,
-              and political work handled under one roof in {business.city}.
+              REM's own services list covers digital printing, in-house bindery, wearables,
+              sublimation, screen printing, mailing services, and promotional products.
+              The practical promise is simple: fewer handoffs, clearer answers, and more
+              of the job managed from Albany.
             </p>
           </Reveal>
           <div className={styles.proofRow} role="list" aria-label="Proof of production">
@@ -128,7 +160,7 @@ export default function AboutPage() {
           <div className={styles.peopleMedia}>
             <Reveal>
               <MediaMask
-                label="THE REM TEAM (REAL PHOTO PENDING)"
+                label="Local Albany production shop"
                 ratio="4 / 5"
               />
             </Reveal>
@@ -146,8 +178,9 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className={styles.peopleSupport}>
-                Machines don&apos;t answer questions. People do. When you call REM, you
-                talk to someone who can walk out onto the floor and check your job.
+                The Capital Region Chamber describes REM as a local printer with a caring,
+                professional staff. That is the point of this site: get customers to a real
+                person fast, with enough job detail to make the next conversation useful.
               </p>
             </Reveal>
             <Reveal delay={0.16}>
