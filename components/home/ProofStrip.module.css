@@ -1,0 +1,61 @@
+/* ACT III — PROOF STRIP. Numerals breathe on the dark field. */
+
+.section {
+  position: relative;
+}
+
+.regTl {
+  top: 1.5rem;
+  left: 1.5rem;
+  color: var(--soft-white);
+}
+
+.regBr {
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: var(--soft-white);
+}
+
+.kickerWrap {
+  text-align: center;
+  margin-bottom: var(--space-block);
+}
+
+.kicker {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.cell {
+  padding-inline: 0.5rem;
+}
+
+/* Thin vertical hairline separators (frame shows short ticks between numerals) */
+.cell:nth-child(even) {
+  border-left: 1px solid var(--white-16);
+}
+
+.ticket {
+  margin-top: var(--space-block);
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cell {
+    border-left: 1px solid var(--white-16);
+  }
+
+  .cell:first-child {
+    border-left: none;
+  }
+}

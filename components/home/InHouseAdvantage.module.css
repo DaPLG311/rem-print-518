@@ -1,0 +1,111 @@
+/* ACT V — IN-HOUSE ADVANTAGE. Sparse warm-black act. */
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.regTl {
+  top: 1.5rem;
+  left: 1.5rem;
+  color: var(--soft-white);
+}
+
+.heading {
+  font-size: var(--display-md);
+  color: var(--soft-white);
+  max-width: 20ch;
+  margin-top: 1.5rem;
+}
+
+.support {
+  color: var(--white-64);
+  max-width: 52ch;
+  margin-top: 1.25rem;
+  font-size: var(--text-lg);
+}
+
+.stations {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 1.5rem;
+  margin-top: var(--space-block);
+  list-style: none;
+  padding: 0;
+}
+
+.stationHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.stationNumber {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.25rem, 1.75rem + 2vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--rem-red);
+}
+
+.stationTitle {
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem);
+  color: var(--soft-white);
+  letter-spacing: -0.01em;
+}
+
+.stationCopy {
+  color: var(--steel);
+  margin-top: 0.75rem;
+  max-width: 34ch;
+}
+
+/* Production-language marquee row */
+.marquee {
+  margin-top: var(--space-block);
+  border-top: 1px solid var(--white-08);
+  border-bottom: 1px solid var(--white-08);
+  padding-block: 1.1rem;
+  overflow: hidden;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: advantage-marquee 26s linear infinite;
+}
+
+.marqueeRun {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.4rem, 1rem + 2vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(252, 251, 248, 0.4);
+}
+
+@keyframes advantage-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marqueeTrack {
+    animation: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .stations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .stations {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

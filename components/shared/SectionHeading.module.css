@@ -1,0 +1,17 @@
+.wrap {
+  max-width: 56rem;
+}
+
+.kicker {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: var(--display-md);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+
+.dark .title {
+  color: var(--soft-white);
+}

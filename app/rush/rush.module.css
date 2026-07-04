@@ -1,0 +1,79 @@
+/* /rush — dark deadline stage. One hero moment: the giant tap-to-call. */
+
+.stage {
+  position: relative;
+  min-height: 100svh;
+  padding: calc(var(--header-height) + 3.5rem) 0 var(--space-section);
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  overflow: hidden;
+}
+
+/* Ghost-outlined display word as background texture */
+.ghostWord {
+  position: absolute;
+  top: 8rem;
+  right: -4vw;
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(8rem, 22vw, 22rem);
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(252, 251, 248, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+.inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+}
+
+.headline {
+  font-size: clamp(2.6rem, 1.6rem + 5vw, 6rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  max-width: 13ch;
+}
+
+.em {
+  font-style: italic;
+  color: var(--rem-red);
+}
+
+.body {
+  color: var(--white-64);
+  max-width: 32rem;
+  font-size: var(--text-lg);
+}
+
+.ticket {
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .copy {
+    position: static;
+  }
+
+  .ghostWord {
+    top: auto;
+    bottom: -4vw;
+  }
+}

@@ -1,0 +1,194 @@
+.page {
+  background-color: var(--soft-white);
+}
+
+/* ---- Hero: dark stage, giant number, oversized serif title ---- */
+
+.hero {
+  position: relative;
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  padding-top: calc(var(--header-height) + clamp(3rem, 2rem + 4vw, 6rem));
+  padding-bottom: var(--space-section);
+  overflow: hidden;
+}
+
+.heroNumber {
+  position: absolute;
+  top: var(--header-height);
+  right: -0.05em;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(10rem, 4rem + 28vw, 26rem);
+  font-weight: 600;
+  line-height: 0.8;
+  color: var(--rem-red);
+  opacity: 0.22;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: center;
+}
+
+.heroKicker {
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-size: var(--display-lg);
+  text-transform: uppercase;
+  max-width: 12ch;
+}
+
+.heroIntro {
+  margin-top: 1.75rem;
+  max-width: 44ch;
+  font-size: var(--text-lg);
+  color: var(--white-64);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.uploadLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-white);
+  opacity: 0.8;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.uploadLink:hover {
+  opacity: 1;
+}
+
+.heroReg {
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: var(--rem-red);
+}
+
+/* ---- Capabilities ---- */
+
+.capabilities {
+  background-color: var(--paper);
+}
+
+.capabilitiesTitle {
+  margin-top: 1.5rem;
+  font-size: var(--display-sm);
+  max-width: 24ch;
+}
+
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.25rem;
+  margin-top: var(--space-block);
+}
+
+.capabilityCard {
+  height: 100%;
+  padding: 1.75rem;
+  background-color: var(--soft-white);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-panel);
+}
+
+.capabilityIndex {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--rem-red);
+}
+
+.capabilityTitle {
+  margin-top: 0.9rem;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.capabilityDesc {
+  margin-top: 0.6rem;
+  font-size: var(--text-sm);
+  color: var(--graphite);
+}
+
+.outcomes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--space-block);
+}
+
+.outcome {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--warm-black);
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---- Closing conversion ---- */
+
+.closing {
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+}
+
+.closingInner {
+  text-align: left;
+}
+
+.closingTitle {
+  margin-top: 1.5rem;
+  font-size: var(--display-md);
+  text-transform: uppercase;
+}
+
+.closingSupport {
+  margin-top: 1.25rem;
+  max-width: 44ch;
+  color: var(--white-64);
+}
+
+.closingActions {
+  margin-top: 2.25rem;
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+  }
+
+  .heroNumber {
+    font-size: clamp(8rem, 40vw, 14rem);
+    opacity: 0.16;
+  }
+
+  .heroMedia {
+    max-width: 26rem;
+  }
+}

@@ -1,0 +1,81 @@
+/* /rush micro-flow — giant tap-to-call + short fallback form. */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 34rem;
+}
+
+/* The huge tap-to-call block — the page's one hero moment */
+.bigCall {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--radius-panel);
+  background-color: var(--rem-red);
+  color: var(--soft-white);
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.bigCall:hover {
+  background-color: var(--rem-red-deep);
+}
+
+.bigCall:active {
+  transform: scale(0.99);
+}
+
+.bigCallKicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.bigCallNumber {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.9rem, 1.2rem + 3.4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.bigCallSub {
+  font-size: var(--text-sm);
+  opacity: 0.85;
+}
+
+/* OR divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.dividerRule {
+  flex: 1;
+  height: 1px;
+  background-color: var(--white-16);
+}
+
+.dividerLabel {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--steel);
+  white-space: nowrap;
+}

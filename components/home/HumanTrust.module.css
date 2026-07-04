@@ -1,0 +1,108 @@
+/* ACT VIII — HUMAN TRUST (light paper act, industrial → human) */
+
+.section {
+  position: relative;
+  padding-block: var(--space-section);
+  overflow: clip;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.copyCol {
+  position: relative;
+  z-index: 2;
+}
+
+.kicker {
+  color: rgba(21, 21, 21, 0.6);
+}
+
+.headline {
+  margin-top: 1.5rem;
+  font-size: var(--display-xl);
+  line-height: 0.96;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--warm-black);
+}
+
+.line {
+  display: block;
+}
+
+.lineItalic {
+  font-style: italic;
+  color: var(--rem-red);
+}
+
+/* Support paragraph rides up into the last headline line (approved frame) */
+.support {
+  position: relative;
+  max-width: 34rem;
+  margin-top: 1.75rem;
+  font-size: var(--text-lg);
+  color: rgba(21, 21, 21, 0.72);
+}
+
+@media (min-width: 1024px) {
+  .support {
+    margin-top: -2.4rem;
+    margin-left: clamp(0rem, 18vw, 16rem);
+  }
+}
+
+.statement {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  max-width: 26ch;
+  font-size: var(--display-sm);
+  text-transform: uppercase;
+  color: var(--warm-black);
+}
+
+.statement em {
+  font-style: italic;
+}
+
+.ctaRow {
+  margin-top: 2rem;
+}
+
+.subline {
+  margin-top: 1.5rem;
+  color: rgba(21, 21, 21, 0.6);
+}
+
+/* ---------------------------------------------------------------------------
+   Stacked people/craft media
+   --------------------------------------------------------------------------- */
+
+.mediaCol {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.mediaLarge {
+  width: 100%;
+}
+
+.mediaSmall {
+  width: 72%;
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
+  margin-left: auto;
+}
+
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaSmall {
+    width: 80%;
+  }
+}

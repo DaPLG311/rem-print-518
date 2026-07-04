@@ -1,0 +1,253 @@
+/* ACT VII — POLITICAL TAKEOVER (full-bleed crimson act) */
+
+.section {
+  position: relative;
+  padding-block: var(--space-section);
+  overflow: clip;
+}
+
+/* Paper-grain pass over the crimson field */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(21, 21, 21, 0.6) 1px, transparent 0);
+  background-size: 3px 3px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Massive ghost-outlined numeral as background texture */
+.ghostNum {
+  position: absolute;
+  top: -0.12em;
+  right: -0.06em;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(12rem, 34vw, 34rem);
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(252, 251, 248, 0.22);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Abstract neutral campaign-material wall (no words, no party colors)
+   --------------------------------------------------------------------------- */
+
+.wall {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(0.5rem, 1.6vw, 1.75rem);
+  padding-top: clamp(1rem, 4vw, 3rem);
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+}
+
+.sign {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.55rem;
+  width: clamp(6.5rem, 13vw, 11.5rem);
+  aspect-ratio: 4 / 3;
+  padding: 12%;
+  border-radius: 6px;
+  background-color: var(--soft-white);
+  box-shadow: 0 22px 44px rgba(21, 21, 21, 0.28);
+}
+
+/* Yard-sign stake */
+.sign::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: clamp(1.5rem, 4vw, 3.25rem);
+  background-color: rgba(21, 21, 21, 0.4);
+}
+
+.signDark {
+  background-color: var(--warm-black);
+}
+
+.bar {
+  display: block;
+  height: 0.6rem;
+  width: 78%;
+  border-radius: 2px;
+  background-color: var(--warm-black);
+}
+
+.barWide {
+  width: 92%;
+  height: 0.85rem;
+}
+
+.barAccent {
+  width: 46%;
+  background-color: var(--rem-red);
+}
+
+.signDark .bar {
+  background-color: rgba(252, 251, 248, 0.85);
+}
+
+.signA {
+  transform: rotate(-5deg) translateY(0.5rem);
+}
+
+.signB {
+  transform: rotate(3deg) translateY(-1.25rem);
+  width: clamp(5.5rem, 11vw, 9.5rem);
+}
+
+.signC {
+  transform: rotate(-2deg);
+  width: clamp(7.5rem, 15vw, 13.5rem);
+}
+
+.signD {
+  transform: rotate(4.5deg) translateY(-0.75rem);
+  width: clamp(5rem, 10vw, 9rem);
+}
+
+.signE {
+  transform: rotate(-3.5deg) translateY(0.75rem);
+}
+
+@media (max-width: 599px) {
+  .signD,
+  .signE {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Copy + conversion
+   --------------------------------------------------------------------------- */
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 62rem;
+}
+
+.kicker {
+  color: rgba(252, 251, 248, 0.85);
+}
+
+.rule {
+  display: block;
+  width: 3.75rem;
+  height: 2px;
+  margin-top: 0.75rem;
+  background-color: var(--soft-white);
+}
+
+.title {
+  margin-top: 1.5rem;
+  font-size: clamp(2.5rem, 7.5vw, 6.75rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: var(--soft-white);
+}
+
+.titleLine {
+  display: block;
+}
+
+.title em {
+  font-style: italic;
+}
+
+.support {
+  margin-top: 1.5rem;
+  max-width: 40rem;
+  font-size: var(--text-lg);
+  color: rgba(252, 251, 248, 0.88);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.75rem;
+  margin-top: 2.5rem;
+}
+
+/* Inverted CTA on crimson — doubled selector beats the base variant */
+.invertCta.invertCta {
+  background-color: var(--soft-white);
+  border-color: var(--soft-white);
+  color: var(--warm-black);
+}
+
+.invertCta.invertCta:hover {
+  background-color: var(--paper);
+  border-color: var(--paper);
+}
+
+/* Underline that draws itself */
+.deadlineLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.75rem;
+  padding-block: 0.35rem;
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-white);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.deadlineLink:hover,
+.deadlineLink:focus-visible {
+  background-size: 100% 2px;
+}
+
+.ticket {
+  margin-top: 3rem;
+  color: rgba(252, 251, 248, 0.85);
+}
+
+.regTl {
+  top: 1.5rem;
+  left: 1.5rem;
+  color: var(--soft-white);
+}
+
+.regBr {
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: var(--soft-white);
+}
+
+@media (max-width: 767px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .deadlineLink {
+    justify-content: center;
+    min-height: 3rem;
+  }
+
+  .ghostNum {
+    font-size: 11rem;
+    -webkit-text-stroke-color: rgba(252, 251, 248, 0.16);
+  }
+}

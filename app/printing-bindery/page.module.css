@@ -1,0 +1,163 @@
+/* ==========================================================================
+   /printing-bindery — Finishing floor (capability-wall translation)
+   Dark equipment-manifest band: crimson serif numerals, jargon → outcome.
+   ========================================================================== */
+
+.finishing {
+  position: relative;
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  overflow: hidden;
+}
+
+/* Ghost-outlined display word as background texture (swag doctrine) */
+.ghostWord {
+  position: absolute;
+  top: 0.02em;
+  left: -0.04em;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(6rem, 2rem + 16vw, 16rem);
+  font-weight: 600;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white-16);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.regTl {
+  top: 1.5rem;
+  left: 1.5rem;
+  color: var(--rem-red);
+}
+
+.finishingInner {
+  position: relative;
+}
+
+.finishingHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.finishingTitle {
+  margin-top: 1.5rem;
+  font-size: var(--display-md);
+  text-transform: uppercase;
+  max-width: 16ch;
+}
+
+.finishingItalic {
+  font-style: italic;
+  color: var(--rem-red);
+}
+
+/* Job-ticket chip, rationed to one per section */
+.ticketChip {
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--white-16);
+  border-radius: 999px;
+  color: var(--white-64);
+  white-space: nowrap;
+}
+
+/* ---- 4×2 equipment-manifest wall ---- */
+
+.wall {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: var(--space-block);
+}
+
+.wallCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 16rem;
+  padding: 1.5rem;
+  background-color: var(--graphite);
+  border: 1px solid var(--white-08);
+  border-radius: var(--radius-panel);
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.wallCard:hover {
+  border-color: var(--rem-red);
+  transform: translateY(-4px);
+}
+
+.wallNumber {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 1.8rem + 2.4vw, 4rem);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--rem-red);
+}
+
+.wallFoot {
+  margin-top: 2.5rem;
+}
+
+.wallTerm {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.wallSpeak {
+  margin-top: 0.35rem;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white-64);
+}
+
+.wallOutcome {
+  margin-top: 0.75rem;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--white-64);
+}
+
+.wallClose {
+  margin-top: var(--space-block);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-sm);
+  font-style: italic;
+  line-height: 1.15;
+  max-width: 24ch;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 1024px) {
+  .wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .wall {
+    grid-template-columns: 1fr;
+  }
+
+  .wallCard {
+    min-height: 0;
+  }
+
+  .wallFoot {
+    margin-top: 1.5rem;
+  }
+}

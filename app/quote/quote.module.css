@@ -1,0 +1,7 @@
+/* /quote page shell — Suspense fallback keeps the dark stage in place
+   so there is no white flash before the wizard hydrates. */
+
+.fallback {
+  min-height: 100svh;
+  background-color: var(--warm-black);
+}

@@ -1,0 +1,105 @@
+.footer {
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  border-top: 1px solid var(--white-08);
+}
+
+.inner {
+  padding-block: clamp(3.5rem, 3rem + 3vw, 6rem) 2.5rem;
+}
+
+.strapline {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.08;
+  text-transform: uppercase;
+  max-width: 26ch;
+  margin-bottom: clamp(2.5rem, 2rem + 2vw, 4.5rem);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+  border-bottom: 1px solid var(--white-16);
+}
+
+.colTitle {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 1.25rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  min-height: 2.25rem;
+  font-size: var(--text-sm);
+  color: var(--soft-white);
+  opacity: 0.85;
+  transition: opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.link:hover {
+  opacity: 1;
+  color: var(--soft-white);
+}
+
+.laneNumber {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--rem-red);
+}
+
+.plain {
+  font-size: var(--text-sm);
+  color: var(--white-64);
+}
+
+.baseline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 2rem;
+}
+
+.serviceArea {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.smallPrint {
+  font-size: var(--text-xs);
+  color: var(--steel);
+}
+
+@media (max-width: 767px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .link {
+    min-height: 2.75rem; /* 44px tap target */
+    align-items: center;
+  }
+}

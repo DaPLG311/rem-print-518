@@ -1,0 +1,181 @@
+/* /promotional-products — Service 05 custom sections */
+
+/* ---- NO CATALOG. ON PURPOSE. — dark guided-discovery statement ---- */
+
+.noCatalog {
+  position: relative;
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  overflow: hidden;
+}
+
+/* Ghost-outlined display word as background texture */
+.ghostWord {
+  position: absolute;
+  bottom: -0.12em;
+  left: -0.04em;
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(7rem, 3rem + 24vw, 22rem);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(252, 251, 248, 0.14);
+  pointer-events: none;
+  user-select: none;
+}
+
+.noCatalogInner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  align-items: center;
+}
+
+.noCatalogTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 1.5rem + 5vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.noCatalogTitle em {
+  color: var(--rem-red);
+  font-style: italic;
+}
+
+.noCatalogSupport {
+  max-width: 34rem;
+  font-size: clamp(1rem, 0.95rem + 0.4vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(252, 251, 248, 0.78);
+  margin: 0 0 2rem;
+}
+
+.noCatalogActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---- Specimen brief ticket ---- */
+
+.ticketWrap {
+  position: relative;
+}
+
+.ticket {
+  position: relative;
+  background-color: var(--paper);
+  color: var(--warm-black);
+  border: 1px solid var(--border-muted);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  transform: rotate(-1.25deg);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+.ticketHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px dashed var(--steel);
+}
+
+.ticketStamp {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--rem-red);
+  border: 1.5px solid var(--rem-red);
+  padding: 0.3rem 0.55rem;
+  transform: rotate(-4deg);
+}
+
+.ticketNo {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--graphite);
+}
+
+.ticketRows {
+  margin: 0;
+  display: grid;
+  gap: 0;
+}
+
+.ticketRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.ticketRow:last-child {
+  border-bottom: none;
+}
+
+.ticketRow dt {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--steel);
+}
+
+.ticketRow dd {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  font-weight: 600;
+  text-align: right;
+}
+
+.ticketFoot {
+  margin: 1rem 0 0;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--steel);
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--graphite);
+}
+
+.ticketFoot span {
+  color: var(--rem-red);
+}
+
+.regTl {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+/* ---- Mobile ---- */
+
+@media (max-width: 56rem) {
+  .noCatalogInner {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket {
+    transform: rotate(-0.75deg);
+    max-width: 28rem;
+  }
+
+  .ghostWord {
+    font-size: clamp(6rem, 34vw, 12rem);
+  }
+}

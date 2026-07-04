@@ -1,0 +1,285 @@
+/* ==========================================================================
+   /political-printing — Service 06
+   Deadline module (warm-black) → arsenal wall (paper) → crimson takeover.
+   ========================================================================== */
+
+/* --- Election-date deadline module ------------------------------------- */
+
+.deadline {
+  position: relative;
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  overflow: hidden;
+}
+
+/* Ghost-outlined display word as background texture */
+.deadlineGhost {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(4rem, 18vw, 16rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white-16);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.deadlineInner {
+  position: relative;
+  z-index: 1;
+}
+
+.deadlineTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-md);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+  margin-top: 1rem;
+}
+
+.deadlineTitle em {
+  font-style: italic;
+  color: var(--rem-red);
+}
+
+.deadlineSupport {
+  max-width: 56ch;
+  margin-top: 1.25rem;
+  color: var(--white-64);
+  line-height: 1.65;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: var(--space-block);
+  background-color: var(--white-16);
+  border: 1px solid var(--white-16);
+  list-style: none;
+  padding: 0;
+}
+
+.countdownStep {
+  background-color: var(--graphite);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.countdownIndex {
+  display: block;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-sm);
+  font-style: italic;
+  color: var(--rem-red);
+  line-height: 1;
+}
+
+.countdownTitle {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 0.85rem;
+}
+
+.countdownDesc {
+  margin-top: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--white-64);
+  line-height: 1.6;
+}
+
+/* Job-ticket urgent strip */
+.deadlineTicket {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: var(--space-block);
+  padding: 1rem 1.25rem;
+  border: 1px dashed var(--white-16);
+}
+
+.ticketChip {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background-color: var(--rem-red);
+  color: var(--soft-white);
+  padding: 0.4rem 0.7rem;
+}
+
+.deadlineCallLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: var(--text-base);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--soft-white);
+  text-decoration: none;
+  background-image: linear-gradient(var(--rem-red), var(--rem-red));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.deadlineCallLink:hover,
+.deadlineCallLink:focus-visible {
+  background-size: 100% 2px;
+}
+
+/* --- Campaign arsenal (paper) ------------------------------------------ */
+
+.arsenal {
+  background-color: var(--paper);
+}
+
+.arsenalTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-md);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  max-width: 20ch;
+  margin-top: 1rem;
+}
+
+.arsenalList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: var(--space-block);
+  list-style: none;
+  padding: 0;
+}
+
+.arsenalItem {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-black);
+  border: 1px solid var(--border-muted);
+  background-color: var(--soft-white);
+  padding: 0.75rem 1.1rem;
+}
+
+.arsenalMedia {
+  margin-top: var(--space-block);
+}
+
+/* --- Crimson takeover conversion band (per frame) ----------------------- */
+
+.takeover {
+  position: relative;
+  background-color: var(--rem-red);
+  color: var(--soft-white);
+  padding-block: var(--space-section);
+  overflow: hidden;
+}
+
+.takeoverReg {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  opacity: 0.6;
+}
+
+.takeoverInner {
+  position: relative;
+}
+
+.takeoverKicker {
+  color: rgba(252, 251, 248, 0.75);
+}
+
+.takeoverTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-lg);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  max-width: 16ch;
+  margin-top: 1rem;
+}
+
+.takeoverTitle em {
+  font-style: italic;
+}
+
+.takeoverSupport {
+  max-width: 52ch;
+  margin-top: 1.25rem;
+  color: rgba(252, 251, 248, 0.85);
+  line-height: 1.65;
+}
+
+.takeoverActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.25rem;
+}
+
+.takeoverCall {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--soft-white);
+  text-decoration: none;
+  background-image: linear-gradient(var(--soft-white), var(--soft-white));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size var(--dur-base) var(--ease-out);
+}
+
+.takeoverCall:hover,
+.takeoverCall:focus-visible {
+  background-size: 100% 2px;
+}
+
+.takeover :focus-visible {
+  outline-color: var(--soft-white);
+}
+
+/* --- Mobile ------------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .countdown {
+    grid-template-columns: 1fr;
+  }
+
+  .deadlineGhost {
+    font-size: clamp(3.5rem, 24vw, 8rem);
+    top: 1rem;
+  }
+
+  .takeoverActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .takeoverCall {
+    justify-content: flex-start;
+  }
+}

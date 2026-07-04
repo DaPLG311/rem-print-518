@@ -1,0 +1,174 @@
+/* Upload zone — dark stage default + crimson step-3 interlude variant. */
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+}
+
+.zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 10rem;
+  padding: 2rem 1.5rem;
+  border: 2px dashed var(--white-16);
+  border-radius: var(--radius-panel);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    background-color var(--dur-base) var(--ease-out),
+    transform var(--dur-base) var(--ease-out);
+}
+
+.zone:hover {
+  border-color: var(--rem-red);
+  background-color: var(--white-08);
+}
+
+.dragActive {
+  border-color: var(--rem-red);
+  background-color: var(--red-tint);
+  transform: scale(1.01);
+}
+
+.input:focus-visible + .zone {
+  outline: 3px solid var(--soft-white);
+  outline-offset: 3px;
+}
+
+.zoneIcon {
+  color: var(--steel);
+}
+
+.zoneLabel {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--soft-white);
+}
+
+.zoneSub {
+  font-size: var(--text-sm);
+  color: var(--steel);
+  max-width: 26rem;
+}
+
+/* Crimson interlude variant (artwork-upload.png) */
+.crimson {
+  border-color: rgba(252, 251, 248, 0.4);
+}
+
+.crimson:hover {
+  border-color: var(--soft-white);
+  background-color: rgba(21, 21, 21, 0.18);
+}
+
+.crimson.dragActive {
+  border-color: var(--soft-white);
+  background-color: rgba(21, 21, 21, 0.25);
+}
+
+.crimson .zoneIcon,
+.crimson .zoneSub {
+  color: var(--soft-white);
+  opacity: 0.85;
+}
+
+/* Honesty note — V1 sends the file list, not the files */
+.notice {
+  font-size: var(--text-sm);
+  color: var(--steel);
+  max-width: 34rem;
+}
+
+.crimson ~ .notice {
+  color: rgba(252, 251, 248, 0.85);
+}
+
+/* Rejection message */
+.rejection {
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--soft-white);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--soft-white);
+}
+
+/* File list — production ticket rows */
+.fileList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fileRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.65rem 0.25rem;
+  border-bottom: 1px dashed var(--white-16);
+  font-size: var(--text-sm);
+}
+
+.fileIcon {
+  flex-shrink: 0;
+  color: var(--steel);
+}
+
+.fileName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--soft-white);
+}
+
+.fileSize {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--steel);
+}
+
+.fileRemove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -0.5rem -0.5rem -0.5rem 0;
+  border-radius: 0.4rem;
+  color: var(--steel);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.fileRemove:hover {
+  color: var(--soft-white);
+}

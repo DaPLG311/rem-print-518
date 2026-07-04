@@ -1,0 +1,8 @@
+/* /upload form — small layout helpers on top of the shared form styles. */
+
+.zoneBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  outline: none;
+}

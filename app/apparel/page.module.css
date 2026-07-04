@@ -1,0 +1,279 @@
+/* ==========================================================================
+   /apparel — page-specific acts composed inside ServicePageLayout
+   Frame: apparel-service.png — dark tungsten mood, specimen job ticket.
+   ========================================================================== */
+
+/* --- Act: specimen job ticket (dark stage) ------------------------------ */
+
+.ticketAct {
+  position: relative;
+  background-color: var(--warm-black);
+  color: var(--soft-white);
+  overflow: hidden;
+}
+
+/* Ghost-outlined display word as background texture (swag doctrine) */
+.ghostWord {
+  position: absolute;
+  top: 50%;
+  right: -0.08em;
+  transform: translateY(-50%);
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(6rem, 18vw, 18rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white-16);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ticketInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-block);
+  align-items: center;
+}
+
+.ticketHeading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-md);
+  line-height: 1.02;
+  font-weight: 500;
+  margin: 0.75rem 0 0;
+  color: var(--soft-white);
+}
+
+.ticketHeading em {
+  font-style: italic;
+  color: var(--rem-red);
+}
+
+.ticketSupport {
+  max-width: 34rem;
+  margin-top: 1.25rem;
+  color: var(--white-64);
+  line-height: 1.65;
+}
+
+/* The specimen ticket panel */
+.ticket {
+  background-color: var(--graphite);
+  border: 1px solid var(--white-16);
+  border-radius: var(--radius-panel);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  max-width: 30rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.ticketHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px dashed var(--white-16);
+}
+
+.ticketStamp {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--rem-red);
+  border: 1.5px solid var(--rem-red);
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  transform: rotate(-3deg);
+}
+
+.ticketNo {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--steel);
+  white-space: nowrap;
+}
+
+.ticketRows {
+  margin: 0;
+}
+
+.ticketRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--white-08);
+}
+
+.ticketRow dt {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: var(--steel);
+}
+
+.ticketRow dd {
+  margin: 0;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--text-lg);
+  color: var(--soft-white);
+  text-align: right;
+}
+
+.ticketFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--steel);
+}
+
+/* CMYK dot strip — print-shop detail, rationed */
+.cmykStrip {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.cmykStrip i {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cmykStrip i:nth-child(1) {
+  background-color: #00b7c9;
+}
+.cmykStrip i:nth-child(2) {
+  background-color: #d61a7f;
+}
+.cmykStrip i:nth-child(3) {
+  background-color: #e6c400;
+}
+.cmykStrip i:nth-child(4) {
+  background-color: var(--soft-white);
+}
+
+/* --- Act: the four questions (paper stage) ------------------------------ */
+
+.questionsAct {
+  background-color: var(--paper);
+  color: var(--warm-black);
+}
+
+.questionsHeading {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-md);
+  line-height: 1.05;
+  font-weight: 500;
+  margin: 0.75rem 0 0;
+}
+
+.questionsHeading em {
+  font-style: italic;
+  color: var(--rem-red);
+}
+
+.questionGrid {
+  list-style: none;
+  margin: var(--space-block) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  counter-reset: none;
+}
+
+.questionCard {
+  position: relative;
+  background-color: var(--soft-white);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-panel);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+
+.questionCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--rem-red);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .questionCard,
+  .questionCard:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+.questionIndex {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  color: var(--rem-red);
+  display: block;
+}
+
+.questionTitle {
+  font-family: var(--font-ui), system-ui, sans-serif;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 1rem 0 0.25rem;
+}
+
+.questionLine {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-style: italic;
+  margin: 0 0 0.6rem;
+}
+
+.questionDetail {
+  color: var(--graphite);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.questionsClose {
+  margin-top: var(--space-block);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: var(--display-sm);
+  line-height: 1.2;
+}
+
+.questionsClose strong {
+  font-weight: 600;
+  color: var(--rem-red);
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+
+@media (min-width: 48rem) {
+  .ticketInner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+
+  .questionGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 72rem) {
+  .questionGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
