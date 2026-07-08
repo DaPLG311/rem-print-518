@@ -1,8 +1,9 @@
 /**
  * Central business config — the ONLY place business facts live.
  * Pages and components consume this; nothing is inlined elsewhere.
- * Source-backed public facts are from REM's official site and Capital Region
- * Chamber listing. Launch-only secrets still live in env vars.
+ * Source-backed public facts are research-verified from REM's public business
+ * listings (Yelp, North American Association, saratoga.com): 55 Railroad Ave,
+ * Ste 1 and established 1985. Launch-only secrets still live in env vars.
  */
 
 export const business = {
@@ -11,8 +12,8 @@ export const business = {
   tagline: 'BRING REM THE JOB. THEY KNOW HOW TO GET IT DONE.',
   phone: '+15184387338',
   phoneDisplay: '(518) 438-7338',
-  addressLine: '10 Railroad Ave, Albany, NY 12205',
-  streetAddress: '10 Railroad Ave',
+  addressLine: '55 Railroad Ave, Ste 1, Albany, NY 12205',
+  streetAddress: '55 Railroad Ave, Ste 1',
   city: 'Albany',
   region: 'NY',
   postalCode: '12205',
@@ -23,7 +24,7 @@ export const business = {
 } as const;
 
 export const proof = [
-  { value: '1993', label: 'Family Printing Roots' },
+  { value: '1985', label: 'Family Printing Roots' },
   { value: '99%', label: 'In-House Production' },
   { value: '3–5', label: 'Day Digital Turnaround' },
   { value: 'Next Day', label: 'Printing Available' },
