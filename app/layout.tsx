@@ -45,6 +45,22 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${playfair.variable} ${archivo.variable}`}>
+      <head>
+        {/*
+          DOM-mutation resilience. GSAP ScrollTrigger `pin` wraps pinned nodes
+          in a pin-spacer, so on client navigation React can try to removeChild
+          a node whose real parent is now the spacer — throwing
+          "NotFoundError: removeChild ... not a child" and white-screening the
+          page ("Application error"). This runs before hydration and makes
+          React's DOM ops no-op instead of throw when a node was moved by a
+          third party. Standard, production-safe fix for this exact crash.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(typeof Node==="undefined"||!Node.prototype)return;var p=Node.prototype,r=p.removeChild;p.removeChild=function(c){if(c&&c.parentNode!==this){return c;}return r.apply(this,arguments);};var i=p.insertBefore;p.insertBefore=function(n,ref){if(ref&&ref.parentNode!==this){return n;}return i.apply(this,arguments);};})();`,
+          }}
+        />
+      </head>
       <body>
         <a href="#main-content" className="skip-link">
           Skip to content
