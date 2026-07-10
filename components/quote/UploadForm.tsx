@@ -4,6 +4,7 @@ import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { track } from '@/lib/track';
+import { revealFieldError } from '@/lib/reveal';
 import UploadZone from './UploadZone';
 import type { FileMeta } from './types';
 import forms from './forms.module.css';
@@ -41,7 +42,7 @@ export default function UploadForm() {
     if (Object.keys(errs).length > 0) {
       const first = Object.keys(errs)[0];
       const targetId = first === 'files' ? 'up-fileIntent' : `up-${first}`;
-      document.getElementById(targetId)?.focus();
+      revealFieldError(targetId, first);
       return;
     }
 

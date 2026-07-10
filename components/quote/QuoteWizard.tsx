@@ -13,6 +13,7 @@ import { ArrowLeft, ArrowRight, Phone } from 'lucide-react';
 import { business } from '@/lib/config';
 import { track } from '@/lib/track';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
+import { revealFieldError } from '@/lib/reveal';
 import UploadZone from './UploadZone';
 import {
   SERVICE_OPTIONS,
@@ -262,16 +263,9 @@ export default function QuoteWizard() {
   function focusFirstError(errs: Record<string, string>) {
     const first = Object.keys(errs)[0];
     if (!first) return;
-    requestAnimationFrame(() => {
-      const el = document.getElementById(`q-${first}`);
-      if (el) {
-        el.focus();
-      } else {
-        // radio-group errors (service / artwork / mailing) — focus first input in group
-        const radio = document.querySelector<HTMLInputElement>(`input[name="${first}"]`);
-        radio?.focus();
-      }
-    });
+    // Scroll the errored field into view + focus it. `id` covers native
+    // controls; `name` fallback covers radio groups (service / artwork / mailing).
+    revealFieldError(`q-${first}`, first);
   }
 
   /* ------------------------------------------------------------------ */

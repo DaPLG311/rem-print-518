@@ -4,6 +4,7 @@ import { useMemo, useState, type FormEvent } from 'react';
 import { ArrowRight, Phone } from 'lucide-react';
 import { business } from '@/lib/config';
 import { track } from '@/lib/track';
+import { revealFieldError } from '@/lib/reveal';
 import { todayStr } from './types';
 import forms from './forms.module.css';
 import styles from './RushForm.module.css';
@@ -37,7 +38,7 @@ export default function RushForm() {
     setErrors(errs);
     if (Object.keys(errs).length > 0) {
       const first = Object.keys(errs)[0];
-      document.getElementById(`rush-${first}`)?.focus();
+      revealFieldError(`rush-${first}`, first);
       return;
     }
 
