@@ -14,6 +14,7 @@ import { business } from '@/lib/config';
 import { track } from '@/lib/track';
 import { gsap, prefersReducedMotion } from '@/lib/gsap';
 import { revealFieldError } from '@/lib/reveal';
+import { getLenis } from '@/lib/lenis';
 import UploadZone from './UploadZone';
 import {
   SERVICE_OPTIONS,
@@ -204,7 +205,13 @@ export default function QuoteWizard() {
         { autoAlpha: 1, y: 0, duration: 0.55, ease: 'power3.out' },
       );
     }
-    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    // Lenis owns the scroll while active; native window.scrollTo is a no-op then.
+    const lenis = getLenis();
+    if (lenis && !prefersReducedMotion()) {
+      lenis.scrollTo(0, { duration: 0.6 });
+    } else {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    }
     headingRef.current?.focus({ preventScroll: true });
   }, [step]);
 

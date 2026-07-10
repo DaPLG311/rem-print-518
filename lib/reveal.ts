@@ -1,13 +1,21 @@
+import { getLenis } from '@/lib/lenis';
+
+/** Clearance (px) below the sticky header when scrolling a field into view. */
+const HEADER_OFFSET = 160;
+
 /**
  * revealFieldError — bring a validation-errored field into view, then focus it.
  *
- * Why this exists: calling `element.focus()` alone does NOT reliably scroll a
- * field into view when it sits above the current scroll position — especially
- * under a sticky header on mobile. The result is a "nothing happened / it
- * errored out" feeling: the user taps Continue at the bottom of a long step and
- * the (off-screen, above) error never comes into view. Scrolling explicitly and
- * centering the field fixes that. Focus uses preventScroll so it doesn't fight
- * the smooth scroll we just started.
+ * Why this exists: calling `element.focus()` alone does NOT scroll a field into
+ * view when it sits above the current scroll position (esp. under the sticky
+ * header on mobile), so the user taps Continue/Send at the bottom of a long
+ * step and the off-screen error never appears — it reads as "nothing happened /
+ * it errored out."
+ *
+ * Critically, this app runs Lenis smooth-scroll, which virtualizes scrolling —
+ * native `scrollIntoView` / `window.scrollTo` are no-ops while it's active. So
+ * we route through the live Lenis instance when present, and fall back to
+ * native scrolling only when Lenis is off (prefers-reduced-motion).
  *
  * @param elementId  The id of the errored control (e.g. "q-productType").
  * @param fallbackName  For radio groups with no single id — the input `name`.
@@ -24,7 +32,14 @@ export function revealFieldError(elementId: string, fallbackName?: string): void
     const reduce =
       typeof window !== 'undefined' &&
       window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+
+    const lenis = getLenis();
+    if (lenis && !reduce) {
+      // Lenis owns the scroll; native APIs won't move the page.
+      lenis.scrollTo(el, { offset: -HEADER_OFFSET, duration: 0.6 });
+    } else {
+      el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    }
     (el as HTMLElement).focus({ preventScroll: true });
   });
 }
